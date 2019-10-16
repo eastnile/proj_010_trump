@@ -1,0 +1,4 @@
+```{r}
+dataM <- matrix(rnorm(100, 5, 2), ncol = 20)
+dataM
+```

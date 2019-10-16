@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>setproj(10)</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h2>setproj(10)</h2>
+
+<p>title: &ldquo;Untitled&rdquo;
+author: &ldquo;Zhaochen He&rdquo;
+date: &ldquo;sysdate&rdquo;</p>
+
+<h2>output: html_document</h2>
+
+<h2>R Markdown</h2>
+
+<pre><code class="r">#stargazer(mod$ols$m,type=&#39;html&#39;,title=&#39;OLS with state FEs&#39;,report=&#39;vcp*&#39;)
+#stargazer(mod$logit$m,type=&#39;html&#39;,title=&#39;OLS with state FEs&#39;,report=&#39;vcp*&#39;)
+#stargazer(mod$probit$m,type=&#39;html&#39;,title=&#39;OLS with state FEs&#39;,report=&#39;vcp*&#39;)
+#stargazer(attitude,type=&#39;html&#39;,title=&#39;test&#39;)
+
+stargazer(c(mod$ols$m,mod$logit$m,mod$probit$m),type=&#39;html&#39;,title=&#39;OLS with state FEs&#39;,report=&#39;vcp*&#39;,covariate.labels=reg.guide$varname.print)
+</code></pre>
+
+<table style="text-align:center"><caption><strong>OLS with state FEs</strong></caption>
+<tr><td colspan="7" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="6"><em>Dependent variable:</em></td></tr>
+<tr><td></td><td colspan="6" style="border-bottom: 1px solid black"></td></tr>
+<tr><td style="text-align:left"></td><td>cc.TrumpPVote</td><td>cc.TrumpGEVote</td><td>cc.TrumpPVote</td><td>cc.TrumpGEVote</td><td>cc.TrumpPVote</td><td>cc.TrumpGEVote</td></tr>
+<tr><td style="text-align:left"></td><td><em>OLS</em></td><td><em>OLS</em></td><td><em>logistic</em></td><td><em>logistic</em></td><td><em>probit</em></td><td><em>probit</em></td></tr>
+<tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td><td>(3)</td><td>(4)</td><td>(5)</td><td>(6)</td></tr>
+<tr><td colspan="7" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Expecations: HHI</td><td>0.008</td><td>0.030</td><td>0.048</td><td>0.312</td><td>0.030</td><td>0.173</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.00000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.0002<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.00003<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Homeowner</td><td>-0.013</td><td>-0.014</td><td>-0.125</td><td>-0.178</td><td>-0.074</td><td>-0.098</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.003<sup>***</sup></td><td>p = 0.00003<sup>***</sup></td><td>p = 0.002<sup>***</sup></td><td>p = 0.00001<sup>***</sup></td><td>p = 0.001<sup>***</sup></td><td>p = 0.00001<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Past4Yrs: Lost Job</td><td>-0.006</td><td>-0.014</td><td>-0.079</td><td>-0.195</td><td>-0.045</td><td>-0.106</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.386</td><td>p = 0.012<sup>**</sup></td><td>p = 0.158</td><td>p = 0.002<sup>***</sup></td><td>p = 0.158</td><td>p = 0.002<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Employment Status</td><td>0.0003</td><td>-0.002</td><td>-0.006</td><td>-0.033</td><td>-0.004</td><td>-0.018</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.773</td><td>p = 0.008<sup>***</sup></td><td>p = 0.504</td><td>p = 0.0004<sup>***</sup></td><td>p = 0.449</td><td>p = 0.0003<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Past4Yrs: Start New Job</td><td>-0.002</td><td>-0.011</td><td>0.074</td><td>-0.084</td><td>0.038</td><td>-0.046</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.751</td><td>p = 0.015<sup>**</sup></td><td>p = 0.152</td><td>p = 0.105</td><td>p = 0.192</td><td>p = 0.104</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Past4Yrs: Got a Raise</td><td>0.016</td><td>0.017</td><td>0.174</td><td>0.190</td><td>0.102</td><td>0.108</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.002<sup>***</sup></td><td>p = 0.00004<sup>***</sup></td><td>p = 0.0002<sup>***</sup></td><td>p = 0.00003<sup>***</sup></td><td>p = 0.0001<sup>***</sup></td><td>p = 0.00002<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Union Member</td><td>0.008</td><td>0.006</td><td>0.063</td><td>0.060</td><td>0.043</td><td>0.043</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.487</td><td>p = 0.565</td><td>p = 0.528</td><td>p = 0.581</td><td>p = 0.448</td><td>p = 0.469</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">In a union (2)</td><td>0.015</td><td>0.019</td><td>0.145</td><td>0.222</td><td>0.083</td><td>0.128</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.007<sup>***</sup></td><td>p = 0.00001<sup>***</sup></td><td>p = 0.001<sup>***</sup></td><td>p = 0.00001<sup>***</sup></td><td>p = 0.001<sup>***</sup></td><td>p = 0.00001<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Family member in union (3)</td><td>0.007</td><td>0.011</td><td>0.072</td><td>0.130</td><td>0.036</td><td>0.069</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.031<sup>**</sup></td><td>p = 0.0001<sup>***</sup></td><td>p = 0.012<sup>**</sup></td><td>p = 0.00002<sup>***</sup></td><td>p = 0.026<sup>**</sup></td><td>p = 0.00003<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Past4Yrs: Retired</td><td>-0.001</td><td>0.024</td><td>-0.033</td><td>0.251</td><td>-0.010</td><td>0.142</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.843</td><td>p = 0.00002<sup>***</sup></td><td>p = 0.536</td><td>p = 0.00003<sup>***</sup></td><td>p = 0.741</td><td>p = 0.00002<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">crashppl</td><td>0.00000</td><td>0.00000</td><td>0.00000</td><td>0.00000</td><td>0.00000</td><td>0.00000</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.144</td><td>p = 0.049<sup>**</sup></td><td>p = 0.371</td><td>p = 0.080<sup>*</sup></td><td>p = 0.262</td><td>p = 0.067<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">crashppl.w</td><td>-0.00000</td><td>-0.00000</td><td>-0.00000</td><td>-0.00001</td><td>-0.00000</td><td>-0.00001</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.316</td><td>p = 0.222</td><td>p = 0.799</td><td>p = 0.246</td><td>p = 0.681</td><td>p = 0.189</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">crashppl.w.sharp</td><td>0.00001</td><td>0.00000</td><td>-0.00001</td><td>0.00003</td><td>0.00000</td><td>0.00002</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.402</td><td>p = 0.800</td><td>p = 0.937</td><td>p = 0.697</td><td>p = 0.988</td><td>p = 0.637</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">crashallpct</td><td>0.019</td><td>-0.017</td><td>0.370</td><td>-0.172</td><td>0.244</td><td>-0.068</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.729</td><td>p = 0.699</td><td>p = 0.384</td><td>p = 0.717</td><td>p = 0.323</td><td>p = 0.795</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">crashallppl</td><td>-0.000</td><td>0.000</td><td>-0.00000</td><td>-0.00000</td><td>-0.00000</td><td>-0.00000</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.864</td><td>p = 0.891</td><td>p = 0.553</td><td>p = 0.843</td><td>p = 0.460</td><td>p = 0.763</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Economic Crash in County</td><td>-0.003</td><td>-0.032</td><td>-0.305</td><td>-0.113</td><td>-0.196</td><td>-0.121</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.963</td><td>p = 0.553</td><td>p = 0.575</td><td>p = 0.848</td><td>p = 0.531</td><td>p = 0.707</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Economic Crash in County (Weighted)</td><td>0.242</td><td>0.255</td><td>2.204</td><td>1.311</td><td>1.333</td><td>0.982</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.356</td><td>p = 0.223</td><td>p = 0.295</td><td>p = 0.539</td><td>p = 0.265</td><td>p = 0.402</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">crashpc.w.sharp</td><td>-1.198</td><td>-0.718</td><td>-8.336</td><td>-6.314</td><td>-5.031</td><td>-4.079</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.116</td><td>p = 0.251</td><td>p = 0.214</td><td>p = 0.265</td><td>p = 0.173</td><td>p = 0.186</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Manufacturing Crash in County</td><td>-0.136</td><td>-0.055</td><td>-0.921</td><td>-0.460</td><td>-0.537</td><td>-0.313</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.179</td><td>p = 0.489</td><td>p = 0.232</td><td>p = 0.592</td><td>p = 0.230</td><td>p = 0.506</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">rustpct</td><td>-0.030</td><td>-0.017</td><td>-0.206</td><td>-0.227</td><td>-0.124</td><td>-0.095</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.178</td><td>p = 0.327</td><td>p = 0.232</td><td>p = 0.233</td><td>p = 0.215</td><td>p = 0.362</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">rustppl</td><td>-0.00000</td><td>-0.00000</td><td>-0.00000</td><td>-0.00000</td><td>-0.00000</td><td>-0.00000</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.431</td><td>p = 0.267</td><td>p = 0.363</td><td>p = 0.384</td><td>p = 0.305</td><td>p = 0.395</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Unemployment in County</td><td>0.001</td><td>0.001</td><td>0.002</td><td>0.018</td><td>0.003</td><td>0.010</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.769</td><td>p = 0.664</td><td>p = 0.894</td><td>p = 0.279</td><td>p = 0.770</td><td>p = 0.255</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Female LFPR in County</td><td>-0.002</td><td>-0.001</td><td>-0.016</td><td>-0.010</td><td>-0.009</td><td>-0.006</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.016<sup>**</sup></td><td>p = 0.283</td><td>p = 0.014<sup>**</sup></td><td>p = 0.163</td><td>p = 0.015<sup>**</sup></td><td>p = 0.150</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Median HI in County</td><td>0.00000</td><td>0.00000</td><td>0.00001</td><td>0.00000</td><td>0.00000</td><td>0.00000</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.200</td><td>p = 0.877</td><td>p = 0.051<sup>*</sup></td><td>p = 0.302</td><td>p = 0.067<sup>*</sup></td><td>p = 0.309</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct HHs in Poverty in County</td><td>0.002</td><td>0.001</td><td>0.020</td><td>0.009</td><td>0.010</td><td>0.004</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.205</td><td>p = 0.316</td><td>p = 0.091<sup>*</sup></td><td>p = 0.488</td><td>p = 0.129</td><td>p = 0.560</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct Workers Filling for TAA in County</td><td>-1.249</td><td>1.330</td><td>-7.889</td><td>27.703</td><td>0.744</td><td>15.725</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.807</td><td>p = 0.741</td><td>p = 0.839</td><td>p = 0.527</td><td>p = 0.974</td><td>p = 0.512</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Views: For TTP?</td><td>0.053</td><td>0.071</td><td>0.332</td><td>0.612</td><td>0.184</td><td>0.340</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Past4Yrs: Finished School</td><td>-0.023</td><td>-0.013</td><td>-0.082</td><td>-0.075</td><td>-0.051</td><td>-0.037</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.011<sup>**</sup></td><td>p = 0.071<sup>*</sup></td><td>p = 0.401</td><td>p = 0.374</td><td>p = 0.335</td><td>p = 0.425</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Past4Yrs: Married</td><td>-0.006</td><td>0.019</td><td>-0.046</td><td>0.168</td><td>-0.028</td><td>0.105</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.456</td><td>p = 0.003<sup>***</sup></td><td>p = 0.526</td><td>p = 0.016<sup>**</sup></td><td>p = 0.492</td><td>p = 0.007<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Past4Yrs: Divorced</td><td>-0.011</td><td>-0.013</td><td>-0.178</td><td>-0.185</td><td>-0.091</td><td>-0.090</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.418</td><td>p = 0.208</td><td>p = 0.115</td><td>p = 0.099<sup>*</sup></td><td>p = 0.157</td><td>p = 0.144</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Past4Yrs: Had Child</td><td>0.013</td><td>-0.014</td><td>0.105</td><td>-0.068</td><td>0.076</td><td>-0.040</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.176</td><td>p = 0.081<sup>*</sup></td><td>p = 0.226</td><td>p = 0.392</td><td>p = 0.120</td><td>p = 0.365</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Past4Yrs: Victim of Crime</td><td>0.003</td><td>-0.009</td><td>0.016</td><td>-0.210</td><td>0.011</td><td>-0.104</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.735</td><td>p = 0.252</td><td>p = 0.829</td><td>p = 0.013<sup>**</sup></td><td>p = 0.791</td><td>p = 0.024<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Past4Yrs: ER Visit</td><td>-0.002</td><td>0.005</td><td>-0.042</td><td>0.053</td><td>-0.019</td><td>0.034</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.571</td><td>p = 0.132</td><td>p = 0.229</td><td>p = 0.161</td><td>p = 0.356</td><td>p = 0.100<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Death rate in County: Drugs/Alchol</td><td>-0.838</td><td>-0.493</td><td>-7.105</td><td>-5.408</td><td>-4.158</td><td>-3.482</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.123</td><td>p = 0.249</td><td>p = 0.109</td><td>p = 0.255</td><td>p = 0.103</td><td>p = 0.179</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Death rate in County: Opioids</td><td>0.963</td><td>0.521</td><td>6.153</td><td>8.808</td><td>3.467</td><td>5.635</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.413</td><td>p = 0.578</td><td>p = 0.522</td><td>p = 0.394</td><td>p = 0.530</td><td>p = 0.318</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Death rate in County: Suicides</td><td>1.180</td><td>0.513</td><td>7.068</td><td>11.012</td><td>4.430</td><td>5.828</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.268</td><td>p = 0.526</td><td>p = 0.394</td><td>p = 0.213</td><td>p = 0.356</td><td>p = 0.230</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Death rate in County: All of Above</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Views: Immigration - More border patrols</td><td>-0.056</td><td>-0.130</td><td>-0.575</td><td>-1.036</td><td>-0.320</td><td>-0.579</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Views: Immigration - Amnesty for Dreamers</td><td>0.058</td><td>0.098</td><td>0.537</td><td>0.816</td><td>0.297</td><td>0.456</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Views: Immigration - Deport Illegals</td><td>-0.120</td><td>-0.151</td><td>-0.803</td><td>-1.032</td><td>-0.460</td><td>-0.579</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Views: Race - Angry that Racism Exists</td><td>0.025</td><td>0.044</td><td>0.126</td><td>0.476</td><td>0.077</td><td>0.254</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Views: Race - Whites have advantages</td><td>0.053</td><td>0.094</td><td>0.346</td><td>0.670</td><td>0.201</td><td>0.375</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Views: Race - Fearful of other races</td><td>-0.018</td><td>-0.011</td><td>-0.161</td><td>-0.084</td><td>-0.092</td><td>-0.048</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.00000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.00000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Views: Race - Racism is rare</td><td>0.001</td><td>-0.038</td><td>-0.044</td><td>-0.386</td><td>-0.026</td><td>-0.211</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.719</td><td>p = 0.000<sup>***</sup></td><td>p = 0.003<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.003<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Views: Trusts Police</td><td>-0.014</td><td>-0.035</td><td>-0.170</td><td>-0.423</td><td>-0.094</td><td>-0.227</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.00001<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Catholic</td><td>0.014</td><td>-0.017</td><td>0.146</td><td>-0.150</td><td>0.083</td><td>-0.077</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.008<sup>***</sup></td><td>p = 0.00003<sup>***</sup></td><td>p = 0.0003<sup>***</sup></td><td>p = 0.0004<sup>***</sup></td><td>p = 0.0004<sup>***</sup></td><td>p = 0.001<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Importance of Religion</td><td>-0.012</td><td>-0.026</td><td>-0.110</td><td>-0.276</td><td>-0.061</td><td>-0.150</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.0001<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.00003<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.00004<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Church Attendance</td><td>0.013</td><td>-0.013</td><td>0.094</td><td>-0.134</td><td>0.051</td><td>-0.073</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Freq. of Prayer</td><td>-0.001</td><td>-0.005</td><td>-0.012</td><td>-0.056</td><td>-0.007</td><td>-0.031</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.565</td><td>p = 0.00000<sup>***</sup></td><td>p = 0.256</td><td>p = 0.00000<sup>***</sup></td><td>p = 0.247</td><td>p = 0.00000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Use Social Media</td><td>-0.0002</td><td>-0.010</td><td>0.026</td><td>-0.088</td><td>0.016</td><td>-0.053</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.968</td><td>p = 0.004<sup>***</sup></td><td>p = 0.465</td><td>p = 0.025<sup>**</sup></td><td>p = 0.429</td><td>p = 0.014<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Interest in Politics</td><td>-0.002</td><td>0.0002</td><td>0.071</td><td>0.005</td><td>0.038</td><td>0.002</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.420</td><td>p = 0.912</td><td>p = 0.0005<sup>***</sup></td><td>p = 0.795</td><td>p = 0.001<sup>***</sup></td><td>p = 0.839</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Age</td><td>0.001</td><td>-0.00004</td><td>0.008</td><td>-0.003</td><td>0.004</td><td>-0.002</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.00001<sup>***</sup></td><td>p = 0.808</td><td>p = 0.00001<sup>***</sup></td><td>p = 0.082<sup>*</sup></td><td>p = 0.00001<sup>***</sup></td><td>p = 0.056<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Sex</td><td>0.008</td><td>-0.023</td><td>0.037</td><td>-0.282</td><td>0.006</td><td>-0.169</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.087<sup>*</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.345</td><td>p = 0.000<sup>***</sup></td><td>p = 0.775</td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Black</td><td>-0.067</td><td>-0.179</td><td>-1.503</td><td>-1.869</td><td>-0.711</td><td>-0.959</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">US Citizen</td><td>-0.0003</td><td>0.006</td><td>-0.020</td><td>0.037</td><td>-0.012</td><td>0.018</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.899</td><td>p = 0.0002<sup>***</sup></td><td>p = 0.258</td><td>p = 0.028<sup>**</sup></td><td>p = 0.239</td><td>p = 0.059<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Education</td><td>-0.017</td><td>-0.008</td><td>-0.156</td><td>-0.076</td><td>-0.088</td><td>-0.042</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.00000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Married</td><td>-0.002</td><td>-0.008</td><td>-0.009</td><td>-0.071</td><td>-0.005</td><td>-0.039</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.247</td><td>p = 0.000<sup>***</sup></td><td>p = 0.443</td><td>p = 0.000<sup>***</sup></td><td>p = 0.403</td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Has childen under 18</td><td>-0.002</td><td>0.004</td><td>-0.111</td><td>0.001</td><td>-0.064</td><td>-0.0004</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.717</td><td>p = 0.415</td><td>p = 0.027<sup>**</sup></td><td>p = 0.978</td><td>p = 0.024<sup>**</sup></td><td>p = 0.988</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Active Duty</td><td>-0.017</td><td>-0.052</td><td>-0.202</td><td>-0.432</td><td>-0.120</td><td>-0.238</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.471</td><td>p = 0.016<sup>**</sup></td><td>p = 0.301</td><td>p = 0.030<sup>**</sup></td><td>p = 0.271</td><td>p = 0.036<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Veteran</td><td>-0.027</td><td>-0.029</td><td>-0.180</td><td>-0.340</td><td>-0.105</td><td>-0.189</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.00003<sup>***</sup></td><td>p = 0.00000<sup>***</sup></td><td>p = 0.0002<sup>***</sup></td><td>p = 0.000<sup>***</sup></td><td>p = 0.0002<sup>***</sup></td><td>p = 0.000<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Years in Current City</td><td>0.0002</td><td>-0.0001</td><td>0.002</td><td>-0.001</td><td>0.001</td><td>-0.001</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.135</td><td>p = 0.373</td><td>p = 0.069<sup>*</sup></td><td>p = 0.269</td><td>p = 0.089<sup>*</sup></td><td>p = 0.205</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct White in County</td><td>0.049</td><td>0.008</td><td>0.400</td><td>-0.099</td><td>0.198</td><td>-0.065</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.444</td><td>p = 0.871</td><td>p = 0.440</td><td>p = 0.859</td><td>p = 0.508</td><td>p = 0.832</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct Black in County</td><td>0.048</td><td>0.007</td><td>0.395</td><td>-0.111</td><td>0.194</td><td>-0.071</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.451</td><td>p = 0.891</td><td>p = 0.447</td><td>p = 0.842</td><td>p = 0.515</td><td>p = 0.816</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct Native Am. in County</td><td>0.049</td><td>0.008</td><td>0.398</td><td>-0.095</td><td>0.197</td><td>-0.063</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.447</td><td>p = 0.871</td><td>p = 0.442</td><td>p = 0.865</td><td>p = 0.509</td><td>p = 0.836</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct Asian in County</td><td>0.048</td><td>0.006</td><td>0.392</td><td>-0.121</td><td>0.193</td><td>-0.077</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.449</td><td>p = 0.900</td><td>p = 0.450</td><td>p = 0.828</td><td>p = 0.518</td><td>p = 0.800</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct Pacific Is. in County</td><td>0.063</td><td>-0.002</td><td>0.546</td><td>-0.246</td><td>0.276</td><td>-0.133</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.331</td><td>p = 0.967</td><td>p = 0.297</td><td>p = 0.662</td><td>p = 0.358</td><td>p = 0.665</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct Other Race in County</td><td>0.050</td><td>0.008</td><td>0.408</td><td>-0.102</td><td>0.203</td><td>-0.065</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.439</td><td>p = 0.875</td><td>p = 0.432</td><td>p = 0.855</td><td>p = 0.498</td><td>p = 0.833</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct 2plus Races in County</td><td>0.049</td><td>0.006</td><td>0.403</td><td>-0.130</td><td>0.201</td><td>-0.079</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.450</td><td>p = 0.913</td><td>p = 0.439</td><td>p = 0.816</td><td>p = 0.503</td><td>p = 0.797</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct Hispanic in County</td><td>0.00001</td><td>-0.0005</td><td>-0.0003</td><td>-0.003</td><td>-0.0003</td><td>-0.002</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.983</td><td>p = 0.140</td><td>p = 0.934</td><td>p = 0.300</td><td>p = 0.883</td><td>p = 0.312</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Pct Evangelical in County</td><td>-0.006</td><td>0.067</td><td>0.020</td><td>0.873</td><td>-0.007</td><td>0.493</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.878</td><td>p = 0.020<sup>**</sup></td><td>p = 0.943</td><td>p = 0.007<sup>***</sup></td><td>p = 0.967</td><td>p = 0.005<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Population Density</td><td>-0.00000</td><td>-0.00000</td><td>-0.00001</td><td>-0.00000</td><td>-0.00001</td><td>-0.00000</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.016<sup>**</sup></td><td>p = 0.209</td><td>p = 0.005<sup>***</sup></td><td>p = 0.247</td><td>p = 0.008<sup>***</sup></td><td>p = 0.276</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Voted Trump: Primaries</td><td>-0.067</td><td>0.058</td><td>-0.464</td><td>0.463</td><td>-0.239</td><td>0.217</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.259</td><td>p = 0.207</td><td>p = 0.309</td><td>p = 0.390</td><td>p = 0.358</td><td>p = 0.456</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Voted Trump: General Elections</td><td>-0.138</td><td>0.092</td><td>-0.833</td><td>0.844</td><td>-0.492</td><td>0.476</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.089<sup>*</sup></td><td>p = 0.122</td><td>p = 0.184</td><td>p = 0.242</td><td>p = 0.172</td><td>p = 0.222</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_AZ</td><td>-0.070</td><td>0.053</td><td>-0.410</td><td>0.397</td><td>-0.225</td><td>0.213</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.221</td><td>p = 0.222</td><td>p = 0.350</td><td>p = 0.436</td><td>p = 0.368</td><td>p = 0.440</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_AR</td><td>-0.130</td><td>0.008</td><td>-0.890</td><td>-0.113</td><td>-0.489</td><td>-0.099</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.032<sup>**</sup></td><td>p = 0.860</td><td>p = 0.055<sup>*</sup></td><td>p = 0.834</td><td>p = 0.064<sup>*</sup></td><td>p = 0.734</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_CA</td><td>-0.088</td><td>0.063</td><td>-0.495</td><td>0.575</td><td>-0.281</td><td>0.298</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.127</td><td>p = 0.156</td><td>p = 0.265</td><td>p = 0.264</td><td>p = 0.266</td><td>p = 0.284</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_CO</td><td>-0.101</td><td>0.039</td><td>-0.614</td><td>0.350</td><td>-0.318</td><td>0.184</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.085<sup>*</sup></td><td>p = 0.368</td><td>p = 0.174</td><td>p = 0.486</td><td>p = 0.215</td><td>p = 0.497</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_CT</td><td>-0.061</td><td>0.055</td><td>-0.315</td><td>0.536</td><td>-0.178</td><td>0.293</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.319</td><td>p = 0.237</td><td>p = 0.508</td><td>p = 0.316</td><td>p = 0.511</td><td>p = 0.311</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_DE</td><td>-0.090</td><td>0.027</td><td>-0.544</td><td>0.239</td><td>-0.307</td><td>0.113</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.171</td><td>p = 0.586</td><td>p = 0.301</td><td>p = 0.674</td><td>p = 0.305</td><td>p = 0.712</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_DC</td><td>-0.053</td><td>0.061</td><td>-1.018</td><td>0.221</td><td>-0.447</td><td>0.087</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.464</td><td>p = 0.258</td><td>p = 0.253</td><td>p = 0.763</td><td>p = 0.318</td><td>p = 0.821</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_FL</td><td>-0.091</td><td>0.040</td><td>-0.538</td><td>0.271</td><td>-0.290</td><td>0.131</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.109</td><td>p = 0.346</td><td>p = 0.215</td><td>p = 0.591</td><td>p = 0.240</td><td>p = 0.631</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_GA</td><td>-0.087</td><td>0.078</td><td>-0.587</td><td>0.631</td><td>-0.313</td><td>0.329</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.129</td><td>p = 0.073<sup>*</sup></td><td>p = 0.181</td><td>p = 0.216</td><td>p = 0.210</td><td>p = 0.233</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_HI</td><td>-0.226</td><td>0.249</td><td>-1.753</td><td>3.222</td><td>-0.963</td><td>1.606</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.139</td><td>p = 0.040<sup>**</sup></td><td>p = 0.150</td><td>p = 0.017<sup>**</sup></td><td>p = 0.166</td><td>p = 0.029<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_ID</td><td>-0.161</td><td>0.072</td><td>-1.021</td><td>0.865</td><td>-0.546</td><td>0.479</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.010<sup>***</sup></td><td>p = 0.126</td><td>p = 0.030<sup>**</sup></td><td>p = 0.113</td><td>p = 0.042<sup>**</sup></td><td>p = 0.105</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_IL</td><td>-0.114</td><td>0.024</td><td>-0.730</td><td>0.111</td><td>-0.389</td><td>0.051</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.050<sup>**</sup></td><td>p = 0.582</td><td>p = 0.101</td><td>p = 0.829</td><td>p = 0.124</td><td>p = 0.854</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_IN</td><td>-0.069</td><td>0.042</td><td>-0.409</td><td>0.283</td><td>-0.212</td><td>0.140</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.231</td><td>p = 0.336</td><td>p = 0.352</td><td>p = 0.578</td><td>p = 0.395</td><td>p = 0.612</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_IA</td><td>-0.200</td><td>-0.004</td><td>-1.604</td><td>-0.104</td><td>-0.896</td><td>-0.068</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.001<sup>***</sup></td><td>p = 0.933</td><td>p = 0.001<sup>***</sup></td><td>p = 0.843</td><td>p = 0.001<sup>***</sup></td><td>p = 0.810</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_KS</td><td>-0.169</td><td>0.030</td><td>-1.323</td><td>0.319</td><td>-0.724</td><td>0.168</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.007<sup>***</sup></td><td>p = 0.512</td><td>p = 0.007<sup>***</sup></td><td>p = 0.549</td><td>p = 0.010<sup>***</sup></td><td>p = 0.559</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_KY</td><td>-0.168</td><td>0.015</td><td>-1.189</td><td>-0.044</td><td>-0.653</td><td>-0.037</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.005<sup>***</sup></td><td>p = 0.739</td><td>p = 0.009<sup>***</sup></td><td>p = 0.933</td><td>p = 0.012<sup>**</sup></td><td>p = 0.897</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_LA</td><td>-0.050</td><td>0.088</td><td>-0.430</td><td>0.940</td><td>-0.185</td><td>0.520</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.410</td><td>p = 0.052<sup>*</sup></td><td>p = 0.350</td><td>p = 0.077<sup>*</sup></td><td>p = 0.481</td><td>p = 0.070<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_ME</td><td>-0.112</td><td>0.013</td><td>-0.632</td><td>0.151</td><td>-0.339</td><td>0.063</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.097<sup>*</sup></td><td>p = 0.791</td><td>p = 0.235</td><td>p = 0.783</td><td>p = 0.263</td><td>p = 0.833</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_MD</td><td>-0.086</td><td>0.080</td><td>-0.587</td><td>0.720</td><td>-0.317</td><td>0.378</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.144</td><td>p = 0.072<sup>*</sup></td><td>p = 0.196</td><td>p = 0.167</td><td>p = 0.219</td><td>p = 0.180</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_MA</td><td>-0.115</td><td>0.019</td><td>-0.790</td><td>0.130</td><td>-0.444</td><td>0.046</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.057<sup>*</sup></td><td>p = 0.677</td><td>p = 0.090<sup>*</sup></td><td>p = 0.807</td><td>p = 0.094<sup>*</sup></td><td>p = 0.875</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_MI</td><td>-0.134</td><td>0.020</td><td>-0.880</td><td>0.096</td><td>-0.485</td><td>0.045</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.020<sup>**</sup></td><td>p = 0.655</td><td>p = 0.047<sup>**</sup></td><td>p = 0.852</td><td>p = 0.054<sup>*</sup></td><td>p = 0.870</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_MN</td><td>-0.133</td><td>0.029</td><td>-1.029</td><td>0.098</td><td>-0.575</td><td>0.031</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.025<sup>**</sup></td><td>p = 0.512</td><td>p = 0.027<sup>**</sup></td><td>p = 0.850</td><td>p = 0.029<sup>**</sup></td><td>p = 0.913</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_MS</td><td>-0.057</td><td>0.016</td><td>-0.360</td><td>0.359</td><td>-0.172</td><td>0.197</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.371</td><td>p = 0.749</td><td>p = 0.460</td><td>p = 0.535</td><td>p = 0.536</td><td>p = 0.527</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_MO</td><td>-0.095</td><td>0.033</td><td>-0.601</td><td>0.219</td><td>-0.315</td><td>0.133</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.097<sup>*</sup></td><td>p = 0.444</td><td>p = 0.172</td><td>p = 0.668</td><td>p = 0.207</td><td>p = 0.630</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_MT</td><td>0.005</td><td>0.059</td><td>0.068</td><td>0.545</td><td>0.058</td><td>0.323</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.938</td><td>p = 0.231</td><td>p = 0.886</td><td>p = 0.342</td><td>p = 0.831</td><td>p = 0.298</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_NE</td><td>-0.069</td><td>0.064</td><td>-0.419</td><td>0.481</td><td>-0.206</td><td>0.244</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.271</td><td>p = 0.175</td><td>p = 0.382</td><td>p = 0.376</td><td>p = 0.450</td><td>p = 0.407</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_NV</td><td>-0.150</td><td>0.044</td><td>-0.940</td><td>0.336</td><td>-0.534</td><td>0.174</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.013<sup>**</sup></td><td>p = 0.331</td><td>p = 0.043<sup>**</sup></td><td>p = 0.523</td><td>p = 0.044<sup>**</sup></td><td>p = 0.540</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_NH</td><td>-0.150</td><td>0.011</td><td>-0.992</td><td>-0.008</td><td>-0.546</td><td>-0.026</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.015<sup>**</sup></td><td>p = 0.819</td><td>p = 0.041<sup>**</sup></td><td>p = 0.989</td><td>p = 0.047<sup>**</sup></td><td>p = 0.930</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_NJ</td><td>-0.043</td><td>0.068</td><td>-0.217</td><td>0.602</td><td>-0.118</td><td>0.318</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.465</td><td>p = 0.130</td><td>p = 0.634</td><td>p = 0.250</td><td>p = 0.651</td><td>p = 0.261</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_NM</td><td>-0.131</td><td>0.054</td><td>-0.794</td><td>0.447</td><td>-0.468</td><td>0.273</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.035<sup>**</sup></td><td>p = 0.249</td><td>p = 0.103</td><td>p = 0.417</td><td>p = 0.091<sup>*</sup></td><td>p = 0.359</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_NY</td><td>-0.061</td><td>0.077</td><td>-0.335</td><td>0.744</td><td>-0.178</td><td>0.379</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.298</td><td>p = 0.080<sup>*</sup></td><td>p = 0.455</td><td>p = 0.149</td><td>p = 0.486</td><td>p = 0.174</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_NC</td><td>-0.111</td><td>0.039</td><td>-0.756</td><td>0.243</td><td>-0.411</td><td>0.113</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.055<sup>*</sup></td><td>p = 0.377</td><td>p = 0.088<sup>*</sup></td><td>p = 0.636</td><td>p = 0.103</td><td>p = 0.684</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_ND</td><td>-0.063</td><td>0.013</td><td>-0.419</td><td>-0.026</td><td>-0.210</td><td>0.027</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.413</td><td>p = 0.815</td><td>p = 0.476</td><td>p = 0.966</td><td>p = 0.534</td><td>p = 0.935</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_OH</td><td>-0.119</td><td>0.016</td><td>-0.757</td><td>0.061</td><td>-0.409</td><td>0.032</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.039<sup>**</sup></td><td>p = 0.707</td><td>p = 0.087<sup>*</sup></td><td>p = 0.906</td><td>p = 0.103</td><td>p = 0.908</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_OK</td><td>-0.154</td><td>0.037</td><td>-1.088</td><td>0.217</td><td>-0.590</td><td>0.095</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.013<sup>**</sup></td><td>p = 0.433</td><td>p = 0.024<sup>**</sup></td><td>p = 0.692</td><td>p = 0.031<sup>**</sup></td><td>p = 0.749</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_OR</td><td>-0.076</td><td>0.043</td><td>-0.401</td><td>0.211</td><td>-0.230</td><td>0.090</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.189</td><td>p = 0.328</td><td>p = 0.364</td><td>p = 0.683</td><td>p = 0.360</td><td>p = 0.747</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_PA</td><td>-0.073</td><td>0.049</td><td>-0.426</td><td>0.393</td><td>-0.229</td><td>0.196</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.204</td><td>p = 0.261</td><td>p = 0.331</td><td>p = 0.438</td><td>p = 0.357</td><td>p = 0.474</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_RI</td><td>-0.016</td><td>0.048</td><td>0.018</td><td>0.411</td><td>0.019</td><td>0.170</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.817</td><td>p = 0.356</td><td>p = 0.973</td><td>p = 0.480</td><td>p = 0.949</td><td>p = 0.592</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_SC</td><td>-0.091</td><td>0.091</td><td>-0.557</td><td>0.862</td><td>-0.291</td><td>0.482</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.121</td><td>p = 0.041<sup>**</sup></td><td>p = 0.217</td><td>p = 0.099<sup>*</sup></td><td>p = 0.257</td><td>p = 0.089<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_SD</td><td>-0.079</td><td>0.060</td><td>-0.380</td><td>0.387</td><td>-0.200</td><td>0.199</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.260</td><td>p = 0.250</td><td>p = 0.471</td><td>p = 0.508</td><td>p = 0.510</td><td>p = 0.532</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_TN</td><td>-0.074</td><td>0.021</td><td>-0.485</td><td>-0.001</td><td>-0.236</td><td>-0.039</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.202</td><td>p = 0.627</td><td>p = 0.276</td><td>p = 0.998</td><td>p = 0.352</td><td>p = 0.891</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_TX</td><td>-0.176</td><td>0.048</td><td>-1.257</td><td>0.417</td><td>-0.664</td><td>0.209</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.002<sup>***</sup></td><td>p = 0.257</td><td>p = 0.004<sup>***</sup></td><td>p = 0.405</td><td>p = 0.007<sup>***</sup></td><td>p = 0.440</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_UT</td><td>-0.181</td><td>0.080</td><td>-1.209</td><td>0.617</td><td>-0.672</td><td>0.347</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.004<sup>***</sup></td><td>p = 0.088<sup>*</sup></td><td>p = 0.011<sup>**</sup></td><td>p = 0.257</td><td>p = 0.013<sup>**</sup></td><td>p = 0.240</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_VT</td><td>-0.140</td><td>0.026</td><td>-0.926</td><td>0.189</td><td>-0.515</td><td>0.093</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.045<sup>**</sup></td><td>p = 0.643</td><td>p = 0.116</td><td>p = 0.767</td><td>p = 0.119</td><td>p = 0.788</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_VA</td><td>-0.122</td><td>0.044</td><td>-0.889</td><td>0.269</td><td>-0.471</td><td>0.132</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.032<sup>**</sup></td><td>p = 0.310</td><td>p = 0.043<sup>**</sup></td><td>p = 0.596</td><td>p = 0.059<sup>*</sup></td><td>p = 0.629</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_WA</td><td>-0.088</td><td>0.052</td><td>-0.502</td><td>0.443</td><td>-0.278</td><td>0.220</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.128</td><td>p = 0.237</td><td>p = 0.256</td><td>p = 0.388</td><td>p = 0.268</td><td>p = 0.428</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_WV</td><td>-0.076</td><td>0.039</td><td>-0.532</td><td>0.302</td><td>-0.278</td><td>0.203</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.217</td><td>p = 0.400</td><td>p = 0.252</td><td>p = 0.575</td><td>p = 0.295</td><td>p = 0.488</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_WI</td><td>-0.128</td><td>0.033</td><td>-0.816</td><td>0.248</td><td>-0.445</td><td>0.132</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.027<sup>**</sup></td><td>p = 0.446</td><td>p = 0.065<sup>*</sup></td><td>p = 0.627</td><td>p = 0.077<sup>*</sup></td><td>p = 0.633</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">.data_WY</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Constant</td><td>-4.430</td><td>-0.054</td><td>-39.308</td><td>12.920</td><td>-19.416</td><td>8.054</td></tr>
+<tr><td style="text-align:left"></td><td>p = 0.489</td><td>p = 0.992</td><td>p = 0.448</td><td>p = 0.817</td><td>p = 0.515</td><td>p = 0.792</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td colspan="7" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>31,374</td><td>38,926</td><td>31,374</td><td>38,926</td><td>31,374</td><td>38,926</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.262</td><td>0.609</td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.259</td><td>0.607</td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Log Likelihood</td><td></td><td></td><td>-11,706.380</td><td>-10,917.000</td><td>-11,657.370</td><td>-10,960.780</td></tr>
+<tr><td style="text-align:left">Akaike Inf. Crit.</td><td></td><td></td><td>23,654.760</td><td>22,075.990</td><td>23,556.740</td><td>22,163.560</td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>0.354 (df = 31253)</td><td>0.312 (df = 38805)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>92.346<sup>***</sup> (df = 120; 31253)</td><td>502.932<sup>***</sup> (df = 120; 38805)</td><td></td><td></td><td></td><td></td></tr>
+<tr><td colspan="7" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="6" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+</table>
+
+<pre><code class="r"># stargazer(c(mod$probit$m,mod$probitfe$m),type=&#39;html&#39;,title=&#39;OLS with state FEs&#39;,report=&#39;vcp*&#39;)
+</code></pre>
+
+</body>
+
+</html>

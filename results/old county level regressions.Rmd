@@ -1,0 +1,93 @@
+---
+title: "County Level Regressions"
+author: "Zhaochen He"
+date: "January 3, 2019"
+output: html_document
+---
+
+<style>
+table, td, th {
+  border: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  min-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+</style>
+
+```{r setup, include=FALSE}
+setproj(10)
+knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_knit$set(root.dir = respath)
+loadmain()
+
+# Feature Scale County Level Data
+isdum = sapply(main, function(x) { all(x %in% c(0:1, NA)) })
+isnumeric = sapply(main, is.numeric)
+norescale = isdum | !isnumeric
+t = as.data.frame(main)
+main.fscaled = as.data.frame(main)
+main.fscaled[!norescale] = scale(t[!norescale],center=F)
+
+
+# Getreg Function
+getReg = function(regid.arg, regdir.arg) {
+   regid.arg = 2.1
+   regdir.arg = regdir
+   
+    t = regdir.arg[regid == 2.1]
+    print(t)
+    t = t[order(table.order1, table.order2)]
+    v.x = t[include != 'y']$varname.raw
+    v.y = t[include == 'y']$varname.raw
+    xlabels = t[include != 'y']$varname.print
+    # regdata = as.data.frame(ccesplus[, c(v.x.withfe, v.y), with = F])
+    reg = list()
+    # reg$formula = as.formula(paste(v.y, "~", paste(v.x, collapse = '+')))
+    reg$v.x = v.x
+    reg$v.y = v.y
+    return(reg)
+}
+
+gsdat = data.table(gs_read(gstarget, ws = 'regdir'))
+regdir = gsdat[!is.na(include) & is.na(exclude), .(regid, regdscr, varname.raw, varname.print, table.cat, table.order1, table.order2, exclude, include, flag1, flag2)]
+
+t = getReg(2.1,regdir)
+v.y = t$v.y
+v.x.withfe = t$v.x
+
+mod = list()
+for (var in v.y) {
+    #var = 'cc.TrumpGEVote'
+    ## With State FEs
+    # OLS
+    formula = as.formula(paste(var, "~", paste(v.x.withfe, collapse = '+')))
+    mod$ols$m[[var]] = lm(formula = formula, data = main)
+    # Feature Scaled
+    formula = as.formula(paste(var, "~", paste(v.x.withfe, collapse = '+')))
+    mod$ols.fscaled$m[[var]] = lm(formula = formula, data = main.fscaled)
+}
+```
+
+## R Markdown
+
+JOMAMA
+
+```{r cars}
+stargazer(c(mod),
+          type = 'html', 
+          title = 'Regressions', 
+          report = 'vc*sp' 
+          #covariate.labels = xlabels
+          #column.labels = column.labels,
+          #column.separate = column.separate,
+          #dep.var.labels = dep.var.labels,
+          #model.names=F,
+          #model.numbers=F,
+          #omit = c('stateabr')
+          )
+
+```

@@ -1,0 +1,23 @@
+setproj(10)
+---
+title: "Untitled"
+author: "Zhaochen He"
+date: "sysdate"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+wrkdata = swiss
+mod = lm(data=wrkdata,Infant.Mortality ~ Fertility + Agriculture + Education)
+```
+
+## R Markdown
+
+
+```{r results = 'asis'}
+require(stargazer)
+xlabels = c('a','b','c')
+stargazer(mod, type = 'html', title = 'tester', report = 'vc*sp', covariate.labels = xlabels)
+```

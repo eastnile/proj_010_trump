@@ -1,0 +1,29 @@
+---
+title: "Width test"
+output:
+  html_document:
+    theme: default
+---
+
+<style>
+pre {
+  overflow-x: auto;
+}
+pre code {
+  word-wrap: normal;
+  white-space: pre;
+}
+</style>
+
+```{r global_options, echo = FALSE, include = FALSE}
+options(width = 999)
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE,
+                      cache = FALSE, tidy = FALSE, size = "small")
+```
+```{r}
+sessionInfo()
+```
+```{r}
+dataM <- matrix(rnorm(100, 5, 2), ncol = 20)
+dataM
+```

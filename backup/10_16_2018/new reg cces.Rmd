@@ -1,0 +1,33 @@
+setproj(10)
+---
+title: "Untitled"
+author: "Zhaochen He"
+date: "September 13, 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## R Markdown
+
+YO DOOD
+WHADUP
+
+```{r cars}
+summary(cars)
+print(t.text)
+print('yo2')
+```
+
+
+
+```{r results = 'asis'}
+stargazer(mod$ols$m,type='html',title='OLS with state FEs',report='vcp*')
+stargazer(mod$logit$m,type='html',title='OLS with state FEs',report='vcp*')
+stargazer(mod$probit$m,type='html',title='OLS with state FEs',report='vcp*')
+#stargazer(attitude,type='html',title='test')
+
+```

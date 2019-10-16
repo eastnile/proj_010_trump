@@ -1,0 +1,24 @@
+---
+title: "Untitled"
+author: "Zhaochen He"
+date: "sysdate"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+require(stargazer)
+knitr::opts_chunk$set(echo = TRUE)
+
+wrkdata = swiss
+mod = lm(data=wrkdata,Infant.Mortality ~ Fertility + Agriculture + Education)
+```
+
+## R Markdown
+
+
+```{r results = 'asis'}
+xlabels = c('a','b','c')
+stargazer(mod, type = 'html', title = 'tester', report = 'vc*sp',
+          covariate.labels = xlabels,
+          add.lines = c('hello','yo'))
+```

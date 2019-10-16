@@ -1,0 +1,25 @@
+---
+title: "Exploring CCES Data"
+author: "Zhaochen He"
+date: "July 21, 2018"
+output: html_notebook
+---
+
+```{r prep, include=FALSE}
+# Get list of variables from John's CCES data, export to CSV, then paste into gsheets
+setproj(10)
+loadmain()
+```
+
+Let's see where these survey respondents are located.
+```{r, include=FALSE}
+t = ccesplus[,.(nrespondent = .N),by=c('cntyfipsn','statefipsn','cntypropername','stateabr','fipsstr')]
+t = t[!is.na(cntyfipsn)]
+summary(t$nrespondent)
+map.cnty(t,nrespondent,9)
+```
+
+```{r corrtable, include=FALSE}
+
+```
+

@@ -1,0 +1,57 @@
+---
+title: "Regression Tables"
+author: "Zhaochen He"
+date: sysdate
+output: html_document
+---
+
+<style>
+table, td, th {
+  border: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  min-width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+</style>
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+```
+
+## Section 1
+
+
+```{r results = 'asis'}
+#stargazer(mod$ols$m,type='html',title='OLS with state FEs',report='vcp*')
+#stargazer(mod$logit$m,type='html',title='OLS with state FEs',report='vcp*')
+#stargazer(mod$probit$m,type='html',title='OLS with state FEs',report='vcp*')
+#stargazer(attitude,type='html',title='test')
+
+# stargazer(c(mod$probit$m,mod$probitfe$m),type='html',title='OLS with state FEs',report='vc*sp',covariate.labels=xlabels)
+
+xlabels = regdir[include=='x']$varname.print
+column.labels = c('OLS','Probit','Logit','Probit (No FE)','Probit (No Weights)','Probit (Horse-race)')
+column.separate = c(2,2,2,2,2,2)
+dep.var.labels = rep(c('Trump G.E.',' Trump Prim.'),6)
+omit = c('.data_')
+
+stargazer(c(mod),
+          type = 'html', 
+          title = 'Regressions', 
+          report = 'vc*sp', 
+          covariate.labels = xlabels,
+          column.labels = column.labels,
+          column.separate = column.separate,
+          dep.var.labels = dep.var.labels,
+          model.names=F,
+          model.numbers=F,
+          omit = c('stateabr')
+          )
+
+```

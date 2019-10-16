@@ -1,0 +1,80 @@
+---
+title: "R Notebook"
+output:
+  html_document:
+    df_print: paged
+---
+
+
+```{r setup, include=FALSE}
+setproj(10)
+knitr::opts_chunk$set(echo = TRUE)
+loadmain()
+# Feature Scale County Level Data
+isdum = sapply(main, function(x) { all(x %in% c(0:1, NA)) })
+isnumeric = sapply(main, is.numeric)
+norescale = isdum | !isnumeric
+t = as.data.frame(main)
+main.fscaled = as.data.frame(main)
+main.fscaled[!norescale] = scale(t[!norescale],center=F)
+
+
+# Getreg Function
+getReg = function(regid.arg, regdir.arg) {
+   regid.arg = 2.1
+   regdir.arg = regdir
+   
+    t = regdir.arg[regid == 2.1]
+    print(t)
+    t = t[order(table.order1, table.order2)]
+    v.x = t[include != 'y']$varname.raw
+    v.y = t[include == 'y']$varname.raw
+    xlabels = t[include != 'y']$varname.print
+    # regdata = as.data.frame(ccesplus[, c(v.x.withfe, v.y), with = F])
+    reg = list()
+    # reg$formula = as.formula(paste(v.y, "~", paste(v.x, collapse = '+')))
+    reg$v.x = v.x
+    reg$v.y = v.y
+    return(reg)
+}
+
+gsdat = data.table(gs_read(gstarget, ws = 'regdir'))
+regdir = gsdat[!is.na(include) & is.na(exclude), .(regid, regdscr, varname.raw, varname.print, table.cat, table.order1, table.order2, exclude, include, flag1, flag2)]
+
+t = getReg(2.1,regdir)
+v.y = t$v.y
+v.x.withfe = t$v.x
+
+mod = list()
+for (var in v.y) {
+    #var = 'cc.TrumpGEVote'
+    ## With State FEs
+    # OLS
+    formula = as.formula(paste(var, "~", paste(v.x.withfe, collapse = '+')))
+    mod$ols$m[[var]] = lm(formula = formula, data = main)
+    # Feature Scaled
+    formula = as.formula(paste(var, "~", paste(v.x.withfe, collapse = '+')))
+    mod$ols.fscaled$m[[var]] = lm(formula = formula, data = main.fscaled)
+}
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r results = 'asis'}
+stargazer(c(mod),
+          type = 'html', 
+          title = 'Regressions', 
+          report = 'vc*sp' 
+          #covariate.labels = xlabels
+          #column.labels = column.labels,
+          #column.separate = column.separate,
+          #dep.var.labels = dep.var.labels,
+          #model.names=F,
+          #model.numbers=F,
+          #omit = c('stateabr')
+          )
+```

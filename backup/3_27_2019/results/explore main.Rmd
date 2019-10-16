@@ -1,0 +1,134 @@
+```{r}
+# setproj(10)
+# loadmain()
+#attach(main)
+```
+
+**John**: To facilitate our understanding of the data, I've begun running some elementary statistics on our dataset. These results are displayed here. I picture this is a rough draft for our methods and results section. This document is an R-notebook which is published online, and will automatically update when I rerun the underlying code. To improve readability, you might want to select "hide all code" above, which will collapse the R-code and show only the results.
+
+# Data Exploration and Summary Statistics
+## Mortality Data
+### Construction of cross-time summary variables.
+The 2016 elections represent cross-sectional data (one observation per county), but much of our other data, including data on mortality, varies by year. Therefore, we need to create variables which summarize such data across our sample time-frame. To this end, 3 variables were created for each county.
+
+(1) **[cause of death].12pdpy**, cause of death as a percentage of all deaths, per year since 2012.
+(2) **[cause of death].8pdpy**, cause of death as a percentage of all deaths, per year since 2008.
+(3) **[cause of death].disc95**, cause of death as a percentage of all deaths, per year since the beginning of the sample, weighing each subsequent year at 95% of the previous one.
+
+Note that by using % of all deaths, rather than deaths per capita, we control for the fact that the overall death rate in different counties varies (prehaps due to age distribution). This is tantamount to using the "adjusted" death rates from the CDC, which, due to our method of extraction, are generally not available in our data. Unsuprisingly, these 3 variables are highly correlated:
+```{r}
+cor(select(main,matches('mort.*drugalc.*pdpy')),use='pairwise')
+```
+### Correlations between type of deaths
+```{r}
+cor(select(main,matches('mort\\..*12\\.pdpy'),trumpstrnorm),use='pairwise')
+cor(select(main,matches('mort\\..*8\\.pdpy'),trumpstrnorm),use='pairwise')
+cor(select(main,matches('mort\\..*disc95\\.pdpy'),trumpstrnorm),use='pairwise')
+```
+The drug/alcohol deaths and opioid deaths correlated, no suprise as the former contains the latter. Both are somewhat correlated to suicides. Note: Having established that the three summary statistics are similar, I will generally use the ".disc95" variables, as these make use of all of our data.
+
+### Cross-sectional distribution of mortality by cause of death
+```{r}
+hist(select(main,matches('mort\\..*disc95\\.pdpy')))
+```
+  
+These look pretty similar to each other; roughly log-normal with opiod mortality censored at zero.
+
+### Geographic distribution of mortality
+If we plot deaths on a map, a striking pattern emerges:
+```{r}
+suppressWarnings(map.cnty(main,mort.ucd.drugalc.disc95.pdpy,9))
+suppressWarnings(map.cnty(main,mort.ucd.opioid.disc95.pdpy,9))
+suppressWarnings(map.cnty(main,mort.ucd.suicide.disc95.pdpy,9))
+```
+  
+  The western united states seems to have much higher levels of drug/alcohol and suicide mortality. The effect is less striking with opioid deaths. This pattern is of significance to us, since support for Donald Trump during the primaries also tended to be higher in the west.
+
+```{r}
+suppressWarnings(map.cnty(main,trumpstrnorm,9))
+```
+  
+Other researchers have noticed this pattern. For example, [this study](https://www.rwjf.org/en/library/articles-and-news/2013/06/solving-the-riddle-of-the-u-s--suicide-belt.html) contends that the phenomenon has to do with 'residential stability'; i.e., how often people are moving in and out of the given county.
+
+At first I thought that the issue could be explained by population density; prehaps people are more likely to alcohol or commit suicide when living in isolated areas. However, the correlation between these variables is not strong; nor does a side-by-side picture suggest an obvious relationship (for easy of comparison I plot inverse of population density).
+
+```{r}
+cor(main$mort.ucd.drugalc.12.pdpy, main$demo.popdense,use='pairwise')
+```
+```{r}
+# suppressWarnings(map.cnty(main,mort.ucd.suicide.disc95.pdpy,9))
+# main[,demo.popdenseinv := 1/demo.popdense]
+# suppressWarnings(map.cnty(main,demo.popdenseinv,9))
+
+```
+Another possibility is that the effect is due to native american reservations. Many of these high death areas are tribal land. The correlation between these variables is very high. Better include this in the regressions.
+```{r}
+cor(select(main,matches('mort\\..*disc95\\.pdpy'),race.na.p),use='pairwise')
+```
+```{r}
+suppressWarnings(map.cnty(main,race.na.p,9))
+```
+  
+## Exploring the political data
+### Our key political indicators
+Our data contains many measures of electoral performance, but we focus on three.
+
+(1) **trumpstrnorm**: Normalized trump margin of victory in the primaries. This is the variable which you constructed, John. In counties where trump won, it's equal to the percent by which he bested the second strongest GOP candidate. In counties which he lost, it is negative, and equal to the difference between him and the winning candidate. The "normalized" refers to the fact that this number was then multipled by the total number of candidates, since winning by 50% with 2 candidates is analogous to winning by 25% with 4 candidates.
+(2) **dr.pmarg**: The democratic margin of victory in a given election year.
+(3) **pmarg.dif**: The difference in the democractic margin of victory between 2016 and another election year. For example, pmarg.dif12 = .05 means democrats won by 5% more in 2016, as compared to 2012. 
+
+These three variables are mapped below.
+
+```{r}
+suppressWarnings(map.cnty(main,trumpstrnorm,9))
+suppressWarnings(map.cnty(main,dr.pmarg.2016,9))
+suppressWarnings(map.cnty(main,pmarg.dif12,9))
+```
+### Distrubution and Correlations
+Next, I plot histograms of vote percentages for four candidates; no real suprises where; more popular candidates seem to have a greater number of counties counties where they truly dominate (more than 75% share of vote, let's say).
+```{r}
+hist(select(main,matches('votepct_d_bs'),votepct_d_hc,votepct_r_dt,votepct_r_tc))
+```
+  
+Finally, let's consider how these varaibles are related by examining their correlations with one another. Note the negative correlation between trumpstr and pmarg.dif12/08. Counties were trump won the primaries are also counties the GOP carried strongly in the general elections, when compared to previous election cycles. Also note that the correlation between Trump and Bernie's primary preformance was actually positive.
+
+```{r}
+t = select(main,trumpstrnorm,votepct_r_dt,votepct_d_hc,votepct_r_tc,votepct_d_bs,matches('dr.pmarg'),matches('pmarg.dif'))
+heatmap.cor(t)
+```
+
+## Exploring the economic crash variables
+
+In order to understand the appeal of Trump's economic message, we must measure to what extent have US counties have experienced systematic job loss or economic decline. To do this, we use data from the census QWI (Quaterly Workforce Indicator) dataset. This detailed dataset contains county-level employment data broken down by industry. 
+
+As an example of how to proceed, consider the following plot of employment over time for Knox County, Indiana.
+```{r}
+qwi = get(load(paste0(datpath,'qwiNaics2sm.Rdata')))
+suppressWarnings(plot.allind(qwi,'EmpTotalSm',17,95))
+```
+This county, which contains the city of Galesburg, once harbored a large Maytag applicance factory. Around the year 2000, Maytag began closing the plant and outsourcing operations to Mexico. By 2008, the manufactoring industry (labeled 31-33 above), had all but left town. The story of this decline was documented in the book "Boom, Bust, Exodus", by Chad Broughton.
+
+Looking across the United States, many counties share Galesburg's experience: An industry which was once the largest employer has "crashed" to nothing. In this study, we create a series of variables which quantify this phenomenon. The process to create these variables is described below.
+
+First, we smooth the quarterly employment data using a 3-year moving average. This removes seasonal noise (which is very significant for some counties) and allows us to focus on long term changes to the labor market. Then, for every industry, we identify the level of peak employment. We call the difference between this peak value and the present value of employment the "crash size". Crash size is equal to zero if the industry presently employs more people than it ever has in the past. Using this variable as a basis, a number of statistics are generated:
+
+(1) **crashppl** - This variable is the sum of crash size across every industry in a county. It answers the question: over the history of this county, how many jobs, in total, have been lost as a result of any declining industry. The assosiated variables crashppl.w and crashpp.w.sharp recompute this sum but assign extra weight to larger industries, with the idea that declines in the leading industry may have a larger social impact.
+
+(2) **crashpc** - Counties with more people will experience greater job loss, all else equal. To control for this effect, the crashpc variable divides crash size by total employment for each county (specifically, total employment at the time that the industry in question peaked). It answers the question: Roughly what faction of the people in this county have experienced job loss due to a declining industry. Again, the assosiated variables crashpc.w and crashpc.w.sharp recompute this sum but assign extra weight to larger industries.
+
+(3) **rustppl and rustpc** - These variables mirror those above, but apply only to the manufactoring sector. Rust ppl counts the total number of lost jobs in manufactoring, and rust pc counts the porportion of all workers in the county who have participated in such a decline.
+
+These variables are generally correlated with each other. However, the per-capita number does not always correlate with the job loss totals, particulary the unweighted totals. 
+
+```{r}
+heatmap.cor(select(main,matches('crashppl.*rk'),matches('crashpc.*rk'),matches('rust.*rk')))
+suppressWarnings(map.cnty(main,crashpc,9))
+
+#heatmap.cor(select(main,matches('crashppl.*rk'),matches('crashpc.*rk'),matches('crashall.*rk'),matches('rust.*rk')))
+```
+
+## Exploring the other variables
+
+
+
+

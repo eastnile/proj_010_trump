@@ -1,0 +1,11 @@
+---  
+title: My Report  
+output: 
+  html_document:
+    toc: yes 
+---
+
+
+```{r start, code=readLines("merge.R")}
+```
+

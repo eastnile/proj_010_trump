@@ -1,0 +1,99 @@
+
+# Multiple Regression Analysis
+```{r}
+setproj(10)
+loadmain()
+# attach(main)
+v.all = names(main)
+
+# Dependent Variables
+v.y = c('trumpstr','trumpstrnorm',
+        grep('pmarg.dif',v.all,value=T),
+        'votepct_d_bs')
+
+# Independent Variables
+v.x.mort = grep('mort.ucd.*.disc95.pdpy',v.all,value=T)
+
+v.x.crash = names(select(main,matches('crashpc'),matches('rust'),-contains('.rk')))
+
+v.x.otherecon = c('taa.wrks.disc95.pcpy','econ.mhi','econ.pov.p','job.uer','sex.f.clf.p')
+
+# v.x.econ = c(grep('crash',v.all,value=T),
+#              'taa.wrks.disc95.pcpy','econ.mhi','econ.pov.p','job.uer','sex.f.clf.p')
+v.x.demo = c('race.black.p','race.asian.p','race.na.p','race.2plus.p','eth.his.p',
+             'demo.popdense','demo.medage','edu.bs.p','mig.nocit.p')
+v.x.misc = c('relig.evan.pc','relig.majchr.pc','relig.mslm.pc')
+
+
+
+require(fastDummies)
+stdum = dummy_cols(main$stateabr)
+main = as.data.table(cbind(main,stdum))
+v.x.ind = names(select(stdum,matches('.data_')))
+
+v.x.all = c(v.x.mort,v.x.crash,v.x.otherecon,v.x.demo,v.x.misc)
+
+# Generate regression equations
+mod = list()
+mod.ols = list()
+mod$ols$f = list()
+mod$ols$m = list()
+mod$ols$r = list()
+
+# Use named list for data structure
+require(plm)
+for (var in v.y) {
+   mod$ols$f[[var]] = as.formula(paste(var,"~",paste(v.x.all,collapse='+')))
+   # Dummy line to get stargazer to properly display dependent variable names
+   formula = mod$ols$f[[var]]
+   #mod$ols$m[[var]] = plm(formula,main,model='within',index='statefipsn')   
+   mod$ols$m[[var]] = plm(formula,main,model='within',index='statefipsn')   
+    #mod$ols$m[[var]] = lm(formula,main)   
+}
+```
+
+
+
+```{r results = 'asis'}
+stargazer(mod$ols$m,type='html',title='OLS with state FEs',report='vcp*')
+#stargazer(attitude,type='html',title='test')
+
+```
+
+
+```{r}
+# Old code
+# for (i in 1:length(v.y)) {
+#    names2[[i]] = i
+#    mod$ols$f[[i]] = as.formula(paste(v.y[i],"~",
+#                          paste(v.x.mort,collapse='+'),'+',
+#                          paste(v.x.econ,collapse='+')
+#                          ))
+#    mod$ols$m[[i]] = lm(mod$ols$f[[i]],main)
+# 
+# }
+
+
+
+
+# f.1 <- as.formula(paste(v.y[1],"~",
+#                          paste(v.x.mort,collapse='+'),'+',
+#                          paste(v.x.econ,collapse='+')
+#                          ))
+# # 
+# f.2 <- as.formula(paste(v.y[2],"~",
+#                           paste(v.x.mort,collapse='+'),'+',
+#                           paste(v.x.econ,collapse='+')
+# ))
+# 
+# f.3 <- as.formula(paste(v.y[3],"~",
+#                           paste(v.x.mort,collapse='+'),'+',
+#                           paste(v.x.econ,collapse='+')
+# ))
+# 
+# m.1 = lm(f.1,main)
+# stargazer(m.1,type='text')
+
+# m.2 = lm(f.2,main)
+# m.3 = lm(f.3,main)
+```

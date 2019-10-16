@@ -1,0 +1,491 @@
+Description: Revision of (CPS income data extract 1 - prelim)
+Samples selected:
+      IPUMS-CPS, ASEC 1962                              regular
+      IPUMS-CPS, ASEC 1963                              regular
+      IPUMS-CPS, ASEC 1964                              regular
+      IPUMS-CPS, ASEC 1965                              regular
+      IPUMS-CPS, ASEC 1966                              regular
+      IPUMS-CPS, ASEC 1967                              regular
+      IPUMS-CPS, ASEC 1968                              regular
+      IPUMS-CPS, ASEC 1969                              regular
+      IPUMS-CPS, ASEC 1970                              regular
+      IPUMS-CPS, ASEC 1971                              regular
+      IPUMS-CPS, ASEC 1972                              regular
+      IPUMS-CPS, ASEC 1973                              regular
+      IPUMS-CPS, ASEC 1974                              regular
+      IPUMS-CPS, ASEC 1975                              regular
+      IPUMS-CPS, ASEC 1976                              regular
+      IPUMS-CPS, ASEC 1977                              regular
+      IPUMS-CPS, ASEC 1978                              regular
+      IPUMS-CPS, ASEC 1979                              regular
+      IPUMS-CPS, ASEC 1980                              regular
+      IPUMS-CPS, ASEC 1981                              regular
+      IPUMS-CPS, ASEC 1982                              regular
+      IPUMS-CPS, ASEC 1983                              regular
+      IPUMS-CPS, ASEC 1984                              regular
+      IPUMS-CPS, ASEC 1985                              regular
+      IPUMS-CPS, ASEC 1986                              regular
+      IPUMS-CPS, ASEC 1987                              regular
+      IPUMS-CPS, ASEC 1988                              regular
+      IPUMS-CPS, ASEC 1989                              regular
+      IPUMS-CPS, ASEC 1990                              regular
+      IPUMS-CPS, ASEC 1991                              regular
+      IPUMS-CPS, ASEC 1992                              regular
+      IPUMS-CPS, ASEC 1993                              regular
+      IPUMS-CPS, ASEC 1994                              regular
+      IPUMS-CPS, ASEC 1995                              regular
+      IPUMS-CPS, ASEC 1996                              regular
+      IPUMS-CPS, ASEC 1997                              regular
+      IPUMS-CPS, ASEC 1998                              regular
+      IPUMS-CPS, ASEC 1999                              regular
+      IPUMS-CPS, ASEC 2000                              regular
+      IPUMS-CPS, ASEC 2001                              regular
+      IPUMS-CPS, ASEC 2002                              regular
+      IPUMS-CPS, ASEC 2003                              regular
+      IPUMS-CPS, ASEC 2004                              regular
+      IPUMS-CPS, ASEC 2005                              regular
+      IPUMS-CPS, ASEC 2006                              regular
+      IPUMS-CPS, ASEC 2007                              regular
+      IPUMS-CPS, ASEC 2008                              regular
+      IPUMS-CPS, January 2009                           regular
+      IPUMS-CPS, February 2009                          regular
+      IPUMS-CPS, ASEC 2009                              regular
+      IPUMS-CPS, March 2009                             regular
+      IPUMS-CPS, April 2009                             regular
+      IPUMS-CPS, May 2009                               regular
+      IPUMS-CPS, June 2009                              regular
+      IPUMS-CPS, July 2009                              regular
+      IPUMS-CPS, August 2009                            regular
+      IPUMS-CPS, September 2009                         regular
+      IPUMS-CPS, October 20097                          regular
+      IPUMS-CPS, November 2009                          regular
+      IPUMS-CPS, December 2009                          regular
+      IPUMS-CPS, ASEC 2010                              regular
+      IPUMS-CPS, ASEC 2011                              regular
+      IPUMS-CPS, ASEC 2012                              regular
+      IPUMS-CPS, ASEC 2013                              regular
+      IPUMS-CPS, ASEC 2014                              regular
+      IPUMS-CPS, ASEC 2015                              regular
+      IPUMS-CPS, ASEC 2016                              regular
+      IPUMS-CPS, ASEC 2017                              regular
+      IPUMS-CPS, January 2018                           regular
+      IPUMS-CPS, February 2018                          regular
+      IPUMS-CPS, March 2018                             regular
+      IPUMS-CPS, ASEC 2018                              regular
+      IPUMS-CPS, April 2018                             regular
+      IPUMS-CPS, May 2018                               regular
+      IPUMS-CPS, June 2018                              regular
+      IPUMS-CPS, July 2018                              regular
+      IPUMS-CPS, August 2018                            regular
+      IPUMS-CPS, September 2018                         regular
+      IPUMS-CPS, October 2018                           regular
+      IPUMS-CPS, November 2018                          regular
+      IPUMS-CPS, December 2018                          regular
+      IPUMS-CPS, January 2019                           regular
+      IPUMS-CPS, February 2019                          regular
+      IPUMS-CPS, March 2019                             regular
+      IPUMS-CPS, April 2019                             regular
+File Type:                    rectangular
+Case Selection:               No
+  Variable               Columns        Len    03/1962 03/1963 03/1964 03/1965 03/1966 03/1967 03/1968 03/1969 03/1970 03/1971 03/1972 03/1973 03/1974 03/1975 03/1976 03/1977 03/1978 03/1979 03/1980 03/1981 03/1982 03/1983 03/1984 03/1985 03/1986 03/1987 03/1988 03/1989 03/1990 03/1991 03/1992 03/1993 03/1994 03/1995 03/1996 03/1997 03/1998 03/1999 03/2000 03/2001 03/2002 03/2003 03/2004 03/2005 03/2006 03/2007 03/2008 01/2009 02/2009 03/2009 03/2009 04/2009 05/2009 06/2009 07/2009 08/2009 09/2009 10/2009 11/2009 12/2009 03/2010 03/2011 03/2012 03/2013 03/2014 03/2015 03/2016 03/2017 01/2018 02/2018 03/2018 03/2018 04/2018 05/2018 06/2018 07/2018 08/2018 09/2018 10/2018 11/2018 12/2018 01/2019 02/2019 03/2019 04/2019
+  YEAR               H   1-4            4      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X 
+  SERIAL             H   5-9            5      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X 
+  MONTH              H  10-11           2      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X 
+  HWTFINL            H  12-21          10      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       .       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       X       X       X       .       X       X       X       X       X       X       X       X       X       X       X       X       X 
+  CPSID              H  22-35          14      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X 
+  ASECFLAG           H  36              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       X       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       X       X       .       .       .       .       .       .       .       .       .       .       .       X       . 
+  HFLAG              H  37              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  ASECWTH            H  38-47          10      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  CPI99              H  48-51           4      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  PERNUM             P  52-53           2      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X 
+  WTFINL             P  54-67          14      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       .       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       X       X       X       .       X       X       X       X       X       X       X       X       X       X       X       X       X 
+  CPSIDP             P  68-81          14      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X 
+  ASECWT             P  82-91          10      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  FTOTVAL            P  92-101         10      .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCTOT             P 102-109          8      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCWAGE            P 110-116          7      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCBUS             P 117-123          7      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCFARM            P 124-130          7      X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCUNERN           P 131-135          5      X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCSS              P 136-140          5      .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCWELFR           P 141-145          5      .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCGOV             P 146-150          5      .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCIDR             P 151-155          5      .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCALOTH           P 156-160          5      .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCRETIR           P 161-166          6      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCSSI             P 167-171          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCDRT             P 172-176          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCINT             P 177-181          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCUNEMP           P 182-186          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCWKCOM           P 187-191          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCVET             P 192-196          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCSURV            P 197-202          6      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCDISAB           P 203-208          6      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCDIVID           P 209-214          6      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCRENT            P 215-219          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCEDUC            P 220-224          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCCHILD           P 225-229          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCALIM            P 230-234          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCASIST           P 235-239          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCOTHER           P 240-244          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTALCH            P 245              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTREGCT           P 246              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTDIVID           P 247              1      .       .       .       .       X       X       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTELSE            P 248              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTESTAT           P 249              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTINT             P 250              1      .       .       .       .       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTSS              P 251              1      .       .       .       .       X       X       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTWELFR           P 252              1      .       .       .       .       X       X       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTFEDRP           P 253              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTSTLRP           P 254              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTMILRP           P 255              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTPVTRP           P 256              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTRENT            P 257              1      .       .       .       .       X       X       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTRRRP            P 258              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTVDISA           P 259              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTVEDUC           P 260              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTVETPA           P 261              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTVOTHE           P 262              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTVPENS           P 263              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTVSURV           P 264              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTWKCOM           P 265              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCDISA1           P 266-270          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCDISA2           P 271-275          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCLONGJ           P 276-282          7      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCRETI1           P 283-287          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCRETI2           P 288-292          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCSURV1           P 293-297          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  INCSURV2           P 298-302          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  MTHWELFR           P 303-307          5      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  OINCBUS            P 308-313          6      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  OINCFARM           P 314-319          6      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  OINCWAGE           P 320-326          7      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCDISA1           P 327-328          2      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCDISA2           P 329-330          2      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCEARN            P 331              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCEDUC            P 332              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCRETI1           P 333              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCRETI2           P 334              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCSSI             P 335              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCSURV1           P 336-337          2      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCSURV2           P 338-339          2      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCUNEMP           P 340              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCWELFR           P 341              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SRCWKCOM           P 342              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SSIKID             P 343              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  SSKID              P 344              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  VETQA              P 345              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  WHYSS1             P 346              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  WHYSS2             P 347              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  WHYSSI1            P 348              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  WHYSSI2            P 349              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       X       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  GOTUNEMP           P 350              1      .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       X       X       X       X       X       X       X       X       X       X       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+  STIMULUS           P 351-354          4      .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       X       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       .       . 
+
+Variable Availability Key:
+All Years X - available in this sample
+All Years . - not available in this sample
+
+
+ MONTH		Month
+01		January
+02		February
+03		March
+04		April
+05		May
+06		June
+07		July
+08		August
+09		September
+10		October
+11		November
+12		December
+
+ ASECFLAG		Flag for ASEC
+1		ASEC
+2		March Basic
+
+ HFLAG		Flag for the 3/8 file 2014
+0		5/8 file
+1		3/8 file
+
+ GOTALCH		Received alimony or child support income
+0		NIU
+1		No
+2		Yes
+
+ GOTREGCT		Received income from regular contributions
+0		NIU
+1		No
+2		Yes
+
+ GOTDIVID		Received dividend income
+0		NIU
+1		No
+2		Yes
+
+ GOTELSE		Received income from anything else not already covered
+0		NIU
+1		No
+2		Yes
+
+ GOTESTAT		Received estates and trusts income
+0		NIU
+1		No
+2		Yes
+
+ GOTINT		Received interest income
+0		NIU
+1		No
+2		Yes
+
+ GOTSS		Received social security
+0		NIU
+1		No
+2		Yes
+
+ GOTWELFR		Received welfare (public assistance) income
+0		Blank
+1		No
+2		Yes
+9		NIU
+
+ GOTFEDRP		Received federal government pension
+0		NIU
+1		No
+2		Yes
+
+ GOTSTLRP		Received state and local government pension
+0		NIU
+1		No
+2		Yes
+
+ GOTMILRP		Received military retirement pension
+0		NIU
+1		No
+2		Yes
+
+ GOTPVTRP		Received private retirement pension
+0		NIU
+1		No
+2		Yes
+
+ GOTRENT		Received rental or royalties income
+0		NIU
+1		No
+2		Yes
+
+ GOTRRRP		Received railroad retirement pension
+0		NIU
+1		No
+2		Yes
+
+ GOTVDISA		Received veterans' disability compensation
+0		NIU
+1		No
+2		Yes
+
+ GOTVEDUC		Received veterans' education assistance
+0		NIU
+1		No
+2		Yes
+
+ GOTVETPA		Received veterans' payments
+0		NIU
+1		No
+2		Yes
+
+ GOTVOTHE		Received other veterans' payments
+0		NIU
+1		No
+2		Yes
+
+ GOTVPENS		Received veterans' pension
+0		NIU
+1		No
+2		Yes
+
+ GOTVSURV		Received veterans' survivor benefits
+0		NIU
+1		No
+2		Yes
+
+ GOTWKCOM		Received worker's compensation
+0		NIU
+1		No
+2		Yes
+
+ SRCDISA1		First source of disability income
+00		NIU
+01		Workers compensation
+02		Company or union disability
+03		Federal govt disability
+04		US military retirement disability
+05		State or local govt employee disability
+06		US railroad retirement disability
+07		Accident or disability insurance
+08		Black lung miners disability
+09		State temporary sickness
+10		Other or don't know
+
+ SRCDISA2		Second source of disability income
+00		NIU
+01		Workers compensation
+02		Company or union disability
+03		Federal govt disability
+04		US military retirement disability
+05		State or local govt employee disability
+06		US railroad retirement disability
+07		Accident or disability insurance
+08		Black lung miners disability
+09		State temporary sickness
+10		Other or don't know
+
+ SRCEARN		Source of earnings from longest job
+0		NIU
+1		Wage and salary
+2		Self employment
+3		Farm self employment
+4		Without pay
+
+ SRCEDUC		Source of educational assistance
+0		NIU
+1		Government assistance
+2		Scholarships, grants etc from school
+3		Other assistance
+4		Govt assistance and scholarships, grants etc from school
+5		Govt assistance and other assistance
+6		Scholarships, grants etc from school and other assistance
+7		Govt assistance, scholarships, grants etc from school, and other assistance
+
+ SRCRETI1		First source of retirement income
+0		NIU
+1		Company or Union  pension
+2		Federal Government retirement Pension
+3		US Military retirement pension
+4		State or local Govt retirement pension
+5		US Railroad retirement pension
+6		Regular payments from annuities or paid-up insurance policies
+7		Regular payments from IRA, KEOGH, or 401K accounts
+8		Other or don't know
+
+ SRCRETI2		Second source of retirement income
+0		NIU
+1		Company or Union  pension
+2		Federal Government retirement Pension
+3		US Military retirement pension
+4		State or local Govt retirement pension
+5		US Railroad retirement pension
+6		Regular payments from annuities or paid-up insurance policies
+7		Regular payments from IRA, KEOGH, or 401K accounts
+8		Other or do not know
+
+ SRCSSI		Source of supplementary security income
+0		NIU
+1		U.S government
+2		State/local government
+3		Both
+
+ SRCSURV1		First source of survivor benefits
+00		NIU
+01		Company or union survivor pension
+02		Federal government pension
+03		US military retirement survivor pension
+04		State or local govt survivor pension
+05		US railroad retirement survivor pension
+06		Workers compensation pension
+07		Black lung survivor pension
+08		Regular payments from estates or trusts
+09		Regular payments from annuities or paid-up life insurance
+10		Other or do not know
+
+ SRCSURV2		Second source of survivor benefits
+00		NIU
+01		Company or union survivor pension
+02		Federal government pension
+03		US military retirement survivor pension
+04		State or local govt survivor pension
+05		US railroad retirement survivor pension
+06		Workers compensation pension
+07		Black lung survivor pension
+08		Regular payments from estates or trusts
+09		Regular payments from annuities or paid-up life insurance
+10		Other or do not know
+
+ SRCUNEMP		Source of unemployment income
+0		No supplemental or strike benefits
+1		Supplemental unemployment benefits
+2		Union unemployment or strike benefits
+3		Both
+9		NIU
+
+ SRCWELFR		Source of welfare income
+0		NIU
+1		AFDC/TANF
+2		Other
+3		Both AFDC/TANF and other
+
+ SRCWKCOM		Source of workmen's compensation
+0		NIU
+1		State Workers Compensation
+2		Employer or employers insurance
+3		Own insurance
+4		Other
+
+ SSIKID		Child under 18 received SSI income
+0		NIU
+1		No
+2		Yes
+
+ SSKID		Child under 19 received SS income
+0		NIU
+1		No
+2		Yes
+
+ VETQA		Required to fill out annual income questionnaire for veterans' administration
+0		NIU
+1		No
+2		Yes
+
+ WHYSS1		First reason for receiving social security income
+0		NIU
+1		Retired
+2		Disabled (adult or child)
+3		Widowed
+4		Spouse
+5		Surviving child
+6		Dependent child
+7		On behalf of surviving, dependent, or disabled child(ren)
+8		Other (adult or child)
+
+ WHYSS2		Second reason for receiving social security income
+0		NIU
+1		Retired
+2		Disabled (adult or child)
+3		Widowed
+4		Spouse
+5		Surviving child
+6		Dependent child
+7		On behalf of surviving, dependent, or disabled child(ren)
+8		Other (adult or child)
+
+ WHYSSI1		First reason for receiving supplementary security income
+0		NIU
+1		Disabled (adult or child)
+2		Blind (adult or child)
+3		On behalf of a disabled child
+4		On behalf of a blind child
+5		Other (adult or child)
+
+ WHYSSI2		Second reason for receiving supplementary security income
+0		NIU
+1		Disabled (adult or child)
+2		Blind (adult or child)
+3		On behalf of a disabled child
+4		On behalf of a blind child
+5		Other (adult or child)
+
+ GOTUNEMP		Received unemployment compensation
+0		NIU
+1		No
+2		Yes

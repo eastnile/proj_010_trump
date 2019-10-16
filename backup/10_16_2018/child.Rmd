@@ -1,0 +1,8 @@
+This is chapter 1.
+
+```{r, echo=FALSE,results='hide',message=FALSE}
+setproj(10)
+loadmain()
+1
+plot(trees)
+```

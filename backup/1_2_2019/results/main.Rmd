@@ -1,0 +1,38 @@
+---
+title: 'Exploring County Level Data on the 2016 Primaries: Donald Trump, Opioids, and Economic Decline'
+author: 'Zhaochen He'
+date:  '`r Sys.Date()`'
+output: 
+   html_document:
+    toc: true
+    number_sections: true
+    code_folding: hide
+---
+<style>
+pre {
+  overflow-x: auto;
+}
+pre code {
+  word-wrap: normal;
+  white-space: pre;
+}
+</style>
+
+```{r globals, echo = FALSE, include = FALSE}
+options(width = 999)
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE,
+                      tidy = FALSE)
+
+setproj(10)
+loadmain()
+```
+
+
+```{r explore, child = 'explore.Rmd', cache=TRUE}
+```
+```{r explore, child = 'reg.Rmd', cache=TRUE}
+```
+```{r explore, child = 'machinelearn.Rmd', cache=TRUE}
+```
+
+
